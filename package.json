@@ -1,0 +1,11 @@
+{
+  "name": "todo-app",
+  "private": true,
+  "scripts": {
+    "setup": "npm install && npm install --prefix server && npm install --prefix client",
+    "build": "npm install --include=dev --prefix client && npm run build --prefix client && npm install --prefix server",
+    "start": "npm start --prefix server",
+    "dev": "concurrently -n server,client \"npm run dev --prefix server\" \"npm run dev --prefix client\""
+  },
+  "devDependencies": { "concurrently": "^9.0.0" }
+}
